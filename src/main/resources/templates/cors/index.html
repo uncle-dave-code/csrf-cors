@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cors Call</title>
+</head>
+<body>
+<h1>Test CORS</h1>
+<button onclick="makeCorsRequest()">Make CORS Request</button>
+
+<p id="demo"></p>
+<script>
+    function makeCorsRequest() {
+        var url = 'http://localhost:8080/cors-works';
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.addEventListener('load', (event) => {
+            document.getElementById("demo").innerHTML = xhr.responseText;
+        });
+
+        xhr.send();
+    }
+</script>
+</body>
+</html>
